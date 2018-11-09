@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 个人博客</title>
+  <title>yaml文件语法 | 个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="一、简介YAML语言的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。 它的基本语法规则如下。  大小写敏感 使用缩进表示层级关系 缩进时不允许使用Tab键，只允许使用空格 缩进的空格数不重要，只要相同层级的元素左侧对齐  #  表示注释，从这个字符一直到行尾，都会被解析器忽略 YAML支持三种数据结构。  对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yaml文件语法">
+<meta property="og:url" content="http://yoursite.com/2018/11/09/yaml文件语法/index.html">
 <meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="一、简介YAML语言的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。 它的基本语法规则如下。  大小写敏感 使用缩进表示层级关系 缩进时不允许使用Tab键，只允许使用空格 缩进的空格数不重要，只要相同层级的元素左侧对齐  #  表示注释，从这个字符一直到行尾，都会被解析器忽略 YAML支持三种数据结构。  对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes）">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-09T09:19:57.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
+<meta name="twitter:title" content="yaml文件语法">
+<meta name="twitter:description" content="一、简介YAML语言的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。 它的基本语法规则如下。  大小写敏感 使用缩进表示层级关系 缩进时不允许使用Tab键，只允许使用空格 缩进的空格数不重要，只要相同层级的元素左侧对齐  #  表示注释，从这个字符一直到行尾，都会被解析器忽略 YAML支持三种数据结构。  对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes）">
   
     <link rel="alternative" href="/atom.xml" title="个人博客" type="application/atom+xml">
   
@@ -150,76 +154,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-yaml文件语法" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      yaml文件语法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/09/yaml文件语法/" class="archive-article-date">
+
+        
+        <a href="/2018/11/09/yaml文件语法/" class="archive-article-date">
   	<time datetime="2018-11-09T09:19:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/yaml文件语法/">yaml文件语法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>YAML语言的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。</p>
+<p>它的基本语法规则如下。</p>
+<ul>
+<li>大小写敏感</li>
+<li>使用缩进表示层级关系</li>
+<li>缩进时不允许使用Tab键，只允许使用空格</li>
+<li>缩进的空格数不重要，只要相同层级的元素左侧对齐</li>
+</ul>
+<p><strong>#</strong>  表示注释，从这个字符一直到行尾，都会被解析器忽略</p>
+<p>YAML支持三种数据结构。</p>
+<ul>
+<li>对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes） / 字典（dictionary）</li>
+<li>数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）</li>
+<li>纯量（scalars）：单个的、不可再分的值</li>
+</ul>
+<p>以下分别介绍这三种数据结构</p>
+<h1 id="二、对象"><a href="#二、对象" class="headerlink" title="二、对象"></a>二、对象</h1><p>对象是由一个简单的 <code>键: 值</code> 的形式组成(这个冒号后面必须是一个空格)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 一位职工的记录</span><br><span class="line">name: Example Developer</span><br><span class="line">job: Developer</span><br><span class="line">skill: Elite</span><br></pre></td></tr></table></figure>
+<p>转化为JavaScript如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 一位职工的记录</span><br><span class="line">&#123;name: Example Developer, job: Developer, skill: Elite&#125;</span><br></pre></td></tr></table></figure>
+<p>Yaml 也允许另一种写法，将所有键值对写成一个行内对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hash: &#123; name: Steve, foo: bar &#125;</span><br></pre></td></tr></table></figure>
+<p>转为 JavaScript 如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; hash: &#123; name: &apos;Steve&apos;, foo: &apos;bar&apos; &#125; &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、数组"><a href="#三、数组" class="headerlink" title="三、数组"></a>三、数组</h1><p>数组中的所有成员都开始于相同的缩进级别, 并且使用一个 <code>&quot;- &quot;</code> 作为开头(一个横杠和一个空格)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 一个美味水果的列表</span><br><span class="line">- Apple</span><br><span class="line">- Orange</span><br><span class="line">- Strawberry</span><br><span class="line">- Mango</span><br></pre></td></tr></table></figure>
+<p>转化为JavaScript格式如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ &quot;Apple&quot;, &quot;Orange&quot;, &quot;Strawberry&quot;, &quot;Mango&quot;]</span><br></pre></td></tr></table></figure>
+<p>数据结构的子成员是一个数组，这可以在该项下面缩进一个空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 一个美味水果的列表</span><br><span class="line">-</span><br><span class="line"> - Apple</span><br><span class="line"> - Orange</span><br><span class="line"> - Strawberry</span><br><span class="line"> - Mango</span><br></pre></td></tr></table></figure>
+<p>转化为JavaScript格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[ &quot;Apple&quot;, &quot;Orange&quot;, &quot;Strawberry&quot;, &quot;Mango&quot;]]</span><br></pre></td></tr></table></figure>
+<h1 id="四、复合结构"><a href="#四、复合结构" class="headerlink" title="四、复合结构"></a>四、复合结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"># 一位职工记录</span><br><span class="line">name: Example Developer</span><br><span class="line">job: Developer</span><br><span class="line">skill: Elite</span><br><span class="line">employed: True</span><br><span class="line">foods:</span><br><span class="line">    - Apple</span><br><span class="line">    - Orange</span><br><span class="line">    - Strawberry</span><br><span class="line">    - Mango</span><br><span class="line">languages:</span><br><span class="line">    ruby: Elite</span><br><span class="line">    python: Elite</span><br><span class="line">    dotnet: Lame</span><br></pre></td></tr></table></figure>
+<p>转化为JavaScript</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;name: Example Developer, job: Developer, skill: Elite, employed: True&#125;</span><br><span class="line">&#123;foods:[&quot;Apple&quot;, &quot;Orange&quot;, &quot;Strawberry&quot;, &quot;Mango&quot;]&#125;</span><br><span class="line">&#123;languages:</span><br><span class="line">    &quot;ruby&quot;: &quot;Elite&quot;</span><br><span class="line">    &quot;python&quot;: &quot;Elite&quot;</span><br><span class="line">    &quot;dotnet&quot;: &quot;Lame&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五、参考链接"><a href="#五、参考链接" class="headerlink" title="五、参考链接"></a>五、参考链接</h1><p><a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/09/yaml文件语法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-11-09T06:07:52.942Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/09/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
